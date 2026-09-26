@@ -2,8 +2,9 @@ __pycache__/
 .venv/
 # Данные и токенизированный датасет — артефакты стадии, не исходники
 data/
-# Отчёт и метрики генерируются `make tokenize`
-metrics/tokenize.json
-docs/tokenize_report.md
+# Отчёт и метрики генерируются `make tokenize`, но версионируются в git:
+# metrics/tokenize.json объявлен в dvc.yaml с cache: false — такие метрики
+# по конвенции DVC живут в git, чтобы `dvc metrics diff` видел историю.
+# Данных в них нет, весят килобайты. Руками не правятся.
 # Логи самопроверки
 .check_*.log
